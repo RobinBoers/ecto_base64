@@ -1,6 +1,8 @@
 defmodule EctoBase64.MixProject do
   use Mix.Project
 
+  @github "https://github.com/RobinBoers/ecto_base64"
+
   def project do
     [
       app: :ecto_base64,
@@ -10,7 +12,10 @@ defmodule EctoBase64.MixProject do
       deps: deps(),
 
       # Docs
-      source_url: "https://github.com/RobinBoers/ecto_base64",
+      name: "Ecto Base64",
+      description: description(),
+      package: package(),
+      source_url: @github,
       docs: [
         main: "EctoBase64",
         api_reference: false,
@@ -20,8 +25,17 @@ defmodule EctoBase64.MixProject do
   end
 
   def application do
+    []
+  end
+
+  defp description do
+    "Custom Ecto type to base64 {en,de}code binary data in your database"
+  end
+
+  defp package do
     [
-      extra_applications: [:logger]
+      licenses: ["MIT"],
+      links: %{"GitHub" => @github}
     ]
   end
 
