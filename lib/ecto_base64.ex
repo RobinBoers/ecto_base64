@@ -19,6 +19,8 @@ defmodule EctoBase64 do
     Base.decode64(data)
   end
 
+  def load(_), do: :error
+
   def dump(data) when is_binary(data) do
     {:ok, Base.encode64(data)}
   end
